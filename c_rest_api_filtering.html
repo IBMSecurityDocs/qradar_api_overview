@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="To limit the results that are returned in an API retrieval request (HTTP GET), most IBM QRadar API endpoints that return lists of resources support the filter parameter.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>Filter syntax</title>
+</head>
+<body id="concept_hdd_bcw_ns"><main role="main"><article role="article" aria-labelledby="d1875e10">
+<h1 class="topictitle1" id="d1875e10">Filter syntax</h1>
+
+
+<div class="body conbody"><p class="shortdesc"> To limit the results that are returned in an API retrieval request (HTTP GET),
+most <span class="ph">IBM®
+QRadar®</span> API endpoints
+that return lists of resources support the <span class="keyword parmname">filter</span> parameter. </p>
+
+<p> The <span class="keyword parmname">filter</span> parameter syntax is consistent for all endpoints that
+support it. Refer to the documentation for the endpoint to determine whether the filter parameter
+applies to it. Any limitations for the filter syntax are included in that endpoint's description.
+Query parameters must be double URL encoded before they are sent. </p>
+
+<section class="section" role="region" aria-labelledby="d1875e35"><h2 class="sectiontitle" id="d1875e35">Comparison Operators</h2>
+<p>The filter comparison operators table describes the comparison operators that you can use as part
+of the filter parameter.</p>
+
+
+<div class="tablenoborder"><table summary="" id="concept_hdd_bcw_ns__table_psx_fcw_ns" class="defaultstyle"><caption><span class="tablecap">Table 1. Filter comparison operators</span></caption><colgroup><col style="width:16.666666666666664%"><col style="width:33.33333333333333%"><col style="width:50%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d1875e55">Operator</th>
+
+<th id="d1875e58">Description</th>
+
+<th id="d1875e61">Example Filter Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">=</code></td>
+
+<td headers="d1875e58 ">Equality between the identifier and the specified value returned.</td>
+
+<td headers="d1875e61 ">To find offenses where <code class="ph codeph"><var class="keyword varname">status</var>=CLOSED</code>, use the following
+syntax:<p><code class="ph codeph">GET /api/siem/offenses?filter=status%3DCLOSED</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">&gt;</code></td>
+
+<td headers="d1875e58 ">Identifier is greater than the specified value.</td>
+
+<td headers="d1875e61 ">To find offenses where <code class="ph codeph"><var class="keyword varname">credibility</var> &gt; 3</code>, use the
+following syntax:<p><code class="ph codeph">/api/siem/offenses?filter=credibility%20%3E%203</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">&lt;</code></td>
+
+<td headers="d1875e58 ">Identifier is less than the specified value.</td>
+
+<td headers="d1875e61 ">To find offenses where <code class="ph codeph"><var class="keyword varname">magnitude</var> &lt; 9</code>, use the
+following syntax:<p><code class="ph codeph">/api/siem/offenses?filter=magnitude%20%3C%209</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">&lt;=</code></td>
+
+<td headers="d1875e58 ">Identifier is less than or equal to the specified value.</td>
+
+<td headers="d1875e61 ">To find offenses where <code class="ph codeph"><var class="keyword varname">id </var>&lt;= 1004</code>, use the following
+syntax:<p><code class="ph codeph">/api/asset_model/properties?filter=id%20%3C%3D%201004</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 ">&gt;=</td>
+
+<td headers="d1875e58 ">Identifier is greater than or equal to the specified value.</td>
+
+<td headers="d1875e61 "><p>To find offenses where <code class="ph codeph"><var class="keyword varname">scanProfileId</var> &gt;= 3</code>, use the
+following syntax:</p>
+
+<p><code class="ph codeph">/api/scanner/scanprofiles?filter=scanProfileId%20%3E%3D%203</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><p><code class="ph codeph">!=, </code></p>
+
+<p><code class="ph codeph">&lt;&gt;</code>, </p>
+
+<p><code class="ph codeph">^=</code></p>
+</td>
+
+<td headers="d1875e58 ">Identifier is not equal to the specified value.</td>
+
+<td headers="d1875e61 "><p>The following examples filter all IDs that are not equal to 5:</p>
+
+<p><code class="ph codeph">/api/siem/offenses?filter=id%20!%3D%205</code></p>
+
+<p><code class="ph codeph">/api/siem/offenses?filter=id%20%3C%3E%205</code></p>
+
+<p><code class="ph codeph">/api/siem/offenses?filter=id%20%5E%3D%205</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">in</code></td>
+
+<td headers="d1875e58 ">Identifier is equal to at least one of the specified values in the list.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">id</var> in (1001,1111,1200)</code><p>Example:
+<code class="ph codeph">/api/asset_model/assets?filter=id%20in%20(1001%2C1111%2C1200)</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">not in</code></td>
+
+<td headers="d1875e58 ">Identifier is not equal to any of the specified values in the list.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">id</var> not in (1001,1002,1003)</code>:<p>Example:
+<code class="ph codeph">/api/asset_model/saved_searches?filter=id%20not%20in%20(14%2C20%2C1003)</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">between … and …</code></td>
+
+<td headers="d1875e58 ">Identifier is between two specified values.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">id</var> between 0 and 3</code>:<p>Example:
+<code class="ph codeph">/api/siem/offenses?filter=id%20between%200%20and%203</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">not between … and …</code></td>
+
+<td headers="d1875e58 ">Identifier is not between two specified values.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">id</var> not between 30 and 31</code>:<p>Example:
+<code class="ph codeph">/api/siem/offenses?filter=id%20not%20between%2030%20and%2031</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">is null</code></td>
+
+<td headers="d1875e58 ">Identifier is null.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">assigned_to</var> is null</code>:<p>Example:
+<code class="ph codeph">/api/siem/offenses?filter=assigned_to%20is%20null</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e55 "><code class="ph codeph">is not null</code></td>
+
+<td headers="d1875e58 ">Identifier is not null.</td>
+
+<td headers="d1875e61 ">Syntax: <code class="ph codeph"><var class="keyword varname">assigned_to</var> is not null</code>:<p>Example:
+<code class="ph codeph">/api/siem/offenses?filter=assigned_to%20is%20not%20null</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e330"><h2 class="sectiontitle" id="d1875e330">Null values and comparison operators</h2>
+<p>When the field that you filtered on has a 'null' value, comparison operators behave in the
+following ways:</p>
+
+<ul>
+<li>"=", "&gt;", "&gt;=", "&lt;", "&lt;=", "IN", and "BETWEEN" operators always return false.</li>
+
+<li>"!=", "&lt;&gt;", "^=", "NOT BETWEEN", and "NOT IN" always return true.</li>
+</ul>
+
+<p>The best way to test for null values is to use the "is null" or "is not null" operators.</p>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e348"><h2 class="sectiontitle" id="d1875e348">Logical operators</h2>
+<p>Use the logical operators <span class="keyword parmname">OR</span>, <span class="keyword parmname">AND</span>, and
+<span class="keyword parmname">NOT</span> to perform logical operations on subexpressions. The following table
+provides examples of how to use logical operators in filters.</p>
+
+
+<div class="tablenoborder"><table summary="" id="concept_hdd_bcw_ns__table_lpz_pdw_ns" class="defaultstyle"><colgroup><col style="width:18.181818181818183%"><col style="width:27.27272727272727%"><col style="width:54.54545454545454%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d1875e374">Operator</th>
+
+<th id="d1875e377">Description</th>
+
+<th id="d1875e380">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d1875e374 "><code class="ph codeph">or</code></td>
+
+<td headers="d1875e377 ">Performs a logical <span class="keyword parmname">OR</span> operation on the two subexpressions. The
+subexpressions might be comparison nodes or other logical nodes.</td>
+
+<td headers="d1875e380 ">assigned_to is not null OR <code class="ph codeph"><var class="keyword varname">id</var> =
+111</code>:<p><code class="ph codeph">/api/siem/offenses?filter=assigned_to%20is%20not%20null%20or%20id%20%3D%20111</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e374 "><code class="ph codeph">and</code></td>
+
+<td headers="d1875e377 ">Performs a logical <span class="keyword parmname">AND</span> operation on the two subexpressions. The
+subexpressions might be comparison nodes or other logical nodes.</td>
+
+<td headers="d1875e380 ">assigned_to is not null AND <code class="ph codeph"><var class="keyword varname">id</var> =
+111</code>:<p><code class="ph codeph">/api/siem/offenses?filter=assigned_to%20is%20not%20null%20and%20id%20%3D%20111</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e374 "><code class="ph codeph">not</code></td>
+
+<td headers="d1875e377 ">Performs a logical <span class="keyword parmname">NOT</span> operation on the subexpression.</td>
+
+<td headers="d1875e380 "><code class="ph codeph"><var class="keyword varname">protected</var> =true and not <var class="keyword varname">id</var> in
+(111,112,113)</code><p><code class="ph codeph">/api/siem/offenses?filter=protected%20%3D%20true%20and%20not%20id%20in%20(111%2C112%2C113)</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e456"><h2 class="sectiontitle" id="d1875e456">Specifying JSON fields for comparisons</h2>
+<p>The following table explains how to specify JSON fields for use with comparison operators in
+filters.</p>
+
+
+<div class="tablenoborder"><table summary="" id="concept_hdd_bcw_ns__table_ayx_h2w_ns" class="defaultstyle"><colgroup><col style="width:35.714285714285715%"><col style="width:21.428571428571427%"><col style="width:42.857142857142854%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d1875e473">JSON field example</th>
+
+<th id="d1875e476">Description</th>
+
+<th id="d1875e479">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d1875e473 "><pre class="codeblock"><code>{
+"name": "Proprietary Data",
+"element_type": "ALN"
+}</code></pre></td>
+
+<td headers="d1875e476 ">When you apply a filter to a field directly in the object that is returned, the field is
+specified by name.</td>
+
+<td headers="d1875e479 "><p><code class="ph codeph">name = "Proprietary Data"</code></p>
+
+<p><code class="ph codeph">GET /api/reference_data/sets?filter=name%20%3D%20%22Proprietary%20Data%22</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e473 "><pre class="codeblock"><code>{
+ "description": "String",
+ "duration": {
+  "days": 42,
+  "hours": 42,
+  "minutes": 42,
+  "months": 42,
+  "seconds": 42.5,
+  "years": 42
+  }
+}</code></pre></td>
+
+<td headers="d1875e476 "><p>When you apply a filter to a field nested inside a sub object, use brackets to specify the inner
+field.</p>
+</td>
+
+<td headers="d1875e479 "><p><code class="ph codeph">duration(days) &gt;= 20</code></p>
+
+<p><code class="ph codeph">GET /api/scanner/scanprofiles?filter=duration(days)%20%3E%3D%201</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d1875e473 "><pre class="codeblock"><code>["events","flows","simarc"]</code></pre></td>
+
+<td headers="d1875e476 ">For simple JSON types where no field label exists, such as strings, numbers, or Boolean, use
+the <code class="ph codeph">.</code> operator.</td>
+
+<td headers="d1875e479 "><p><code class="ph codeph">.= events</code></p>
+
+<p><code class="ph codeph">GET /api/ariel/databases?filter=.%3D%20events</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e544"><h2 class="sectiontitle" id="d1875e544">Specifying string and numeric values in filters</h2>
+<p>When you filter on strings that have values with non-alphanumeric characters, you must wrap the
+target string in quotation marks. When you filter on numeric values, the numeric values can follow
+these conditions: </p>
+
+<ul>
+<li>Start with a leading + or - sign. </li>
+
+<li>Contain or start with a decimal point.</li>
+
+<li>Include an exponent by using e notation.</li>
+</ul>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e562"><h2 class="sectiontitle" id="d1875e562">Filtering complex objects by using the CONTAINS operator</h2>
+<p>You filter complex objects by using the CONTAINS operator. You use the CONTAINS operator to test
+the contents of lists or maps. On the left side of the operator, is an identifier that is in the
+standard format, for example <span class="ph synph">x(y(z))</span>. The identifier must refer to an element that is
+a list, map, or collection. On the right side of the operator is an expression that specifies how
+the objects in the list must be matched. There are two basic use cases for using the CONTAINS
+operator:</p>
+
+<ul>
+<li>The list that is examined contains simple elements like strings or numbers.</li>
+
+<li>The list contains complex objects.</li>
+</ul>
+
+<dl>
+
+<dt class="dlterm">Lists that contain simple types</dt>
+
+<dd class="dlentry">For lists that contain simple types such as strings or numbers, the expression is a value of the
+same type. For single comparisons, no brackets are required.</dd>
+
+<dd class="ddexpand"><p>To request only asset saved searches that have <var class="keyword varname">ftp</var> as the string in the
+filter's value field:</p>
+
+<p><code class="ph codeph">GET
+/api/asset_model/saved_searches?filter=filters%20contains%20value%20%3D%20ftp</code></p>
+
+<p>To request assets where interfaces contains the IP address "192.0.2.0":</p>
+
+<p><code class="ph codeph">GET
+/api/asset_model/assets?filter=interfaces%20contains%20ip_addresses%20contains%20value%20%3D%20%192.0.2.0%22</code></p>
+</dd>
+
+
+<dt class="dlterm">Lists that contain complex objects</dt>
+
+<dd class="dlentry"><p>For lists that contain complex objects, the expression is a complete filter expression for the
+objects within the list. This subfilter expression uses the same syntax as any other filter. You can
+use any operator in the subfilter to test sublists inside the original list. Identifiers in this
+expression are relative to the objects in the list that the CONTAINS operator is operating on. In
+complex subfilter expressions, brackets are required.</p>
+</dd>
+
+<dd class="ddexpand"><p>To request only assets that have a field <code class="ph codeph">value = 14</code> and the <code class="ph codeph">Greater
+than</code> operator , apply the filter <code class="ph codeph">filters contains (value = 14 or operator =
+"Greater than")</code>. This filter returns the first and the last elements in the list.</p>
+
+<p><code class="ph codeph">GET
+/api/asset_model/saved_searches?filter=filters%20contains%20(value%20%3D%2014%20and%20operator%20%3D%20%22Greater%20than%22)</code></p>
+
+<p>To find offenses that contain source addresses that have ID values less than 3 apply the
+following filter:</p>
+
+<p><code class="ph codeph">GET /api/siem/offenses?filter=source_address_ids%20contains%20(.%3C3)</code></p>
+</dd>
+</dl>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e641"><h2 class="sectiontitle" id="d1875e641">The LIKE operator</h2>
+<p> Use the LIKE operator to retrieve partial string matches.</p>
+
+<p>The LIKE operator uses the following format: <code class="ph codeph">identifier like "expression"</code>.
+Quotation marks around the expression are mandatory. Single and double quotation marks are
+supported. The LIKE keyword does case-sensitive matching.</p>
+
+<p>The following wildcard characters are supported. If you use wildcard characters in a string, you
+must escape them.</p>
+
+
+<div class="tablenoborder"><table summary="" id="concept_hdd_bcw_ns__table_sjy_qh5_rs" class="defaultstyle"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d1875e666">Wildcard character</th>
+
+<th id="d1875e669">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d1875e666 ">%</td>
+
+<td headers="d1875e669 ">Matches a string of zero or more characters</td>
+</tr>
+
+<tr>
+<td headers="d1875e666 ">_</td>
+
+<td headers="d1875e669 ">Matches any single character</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="p">For example, consider an API that returns the following collection of
+data:<pre class="codeblock"><code>GET /path/to/api
+[
+ {
+ "hostname": "server.domain1"
+ },
+ {
+ "hostname": "server.domain2"
+ },
+ {
+ "hostname": "SERVER.domain"
+ },
+ {
+ "hostname": "server.DOMAIN"
+ }
+]
+</code></pre></div>
+
+<p>You can combine the wildcard characters in the same expression. For example, to find servers in
+<span class="keyword parmname">domain1</span> or <span class="keyword parmname">domain2</span>, use the expression: <code class="ph codeph">hostname
+LIKE "%.domain_"</code>.</p>
+
+<pre class="codeblock"><code>GET /path/to/api?filter=hostname%20LIKE%20%22%25.domain_%22 
+[
+ {
+ "hostname": "server.domain1"
+ },
+ {
+ "hostname": "server.domain2"
+ }
+]
+</code></pre>
+<p>Notice that <span class="keyword parmname">SERVER.domain</span> is not returned, because the underscore (_) has no
+matching trailing character.</p>
+</section>
+
+<section class="section" role="region" aria-labelledby="d1875e719"><h2 class="sectiontitle" id="d1875e719">The ILIKE operator</h2>
+
+<p>Use the ILIKE operator to retrieve case-insensitive partial string matches. </p>
+
+<div class="p">The ILIKE operator is similar to the LIKE operator, but is case-insensitive. For example,
+consider an API that returns the following collection of
+data:<pre class="codeblock"><code>GET /path/to/api
+[
+ {
+ "hostname": "server.domain1"
+ },
+ {
+ "hostname": "server.domain2"
+ },
+ {
+ "hostname": "SERVER.domain"
+ },
+ {
+ "hostname": "server.DOMAIN"
+ }
+] </code></pre></div>
+
+<div class="p">Filter with the expression <code class="ph codeph">hostname ILIKE "server.domain"</code> produces the following
+collection of
+data:<pre class="codeblock"><code>GET /path/to/api?filter=hostname%20ILIKE%20%22server.domain%22'
+[
+ {
+ "hostname": "SERVER.domain"
+ },
+ {
+ "hostname": "server.DOMAIN"
+ }
+]</code></pre></div>
+
+</section>
+</div>
+<aside role="complementary" aria-labelledby="d1875e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>

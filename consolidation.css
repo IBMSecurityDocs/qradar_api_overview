@@ -1,0 +1,47 @@
+.carbon-tag-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  margin: 0.25rem;
+  border-radius: 0.9375rem;
+  background-color: #d0e2ff;
+  /*color: #0043ce;*/
+  color: #000000;
+}
+
+.carbon-tag-teal {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  margin: 0.25rem;
+  border-radius: 0.9375rem;
+  background-color: #9ef0f0;
+  /*color: #005d5d;*/
+  color: #000000;
+}
+
+.carbon-tag-magenta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  margin: 0.25rem;
+  border-radius: 0.9375rem;
+  background-color: #ffd6e8;
+  /*color: #9f1853;*/
+  color: #000000;
+}
+
+.carbon-tag-green {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  margin: 0.25rem;
+  border-radius: 0.9375rem;
+  background-color: #a7f0ba;
+  /*color: #0e6027;*/
+  color: #000000;
+}

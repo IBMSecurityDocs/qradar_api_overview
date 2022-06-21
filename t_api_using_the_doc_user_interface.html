@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="Use the interactive API documentation page to access technical details for the RESTful APIs and experiment with making API requests to your server.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>Accessing the interactive API documentation page</title>
+</head>
+<body id="task_nvf_qqz_qp"><main role="main"><article role="article" aria-labelledby="d1147e10">
+<h1 class="topictitle1" id="d1147e10">Accessing the interactive API documentation page</h1>
+
+<div class="body taskbody" id="rest_api_doc_taskbody"><div class="abstract">
+ <span class="shortdesc">Use the interactive API documentation page to access technical details for the
+RESTful APIs and experiment with making API requests to your server. </span>
+
+</div>
+
+
+<div class="section context">
+<div class="p">The API documentation user interface provides descriptions and the ability to use the following
+REST API interfaces:
+<div class="tablenoborder"><table summary="" id="task_nvf_qqz_qp__table_wqm_jqz_qp" class="defaultstyle"><caption><span class="tablecap">Table 1. REST API interfaces</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d1147e39">REST API</th>
+
+<th id="d1147e42">Description</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/analytics</code></td>
+
+<td headers="d1147e42 ">Create, update, and remove custom actions for rules.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/ariel</code></td>
+
+<td headers="d1147e42 ">View event and flow properties, create event and flow searches, and manage searches.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/asset_model</code></td>
+
+<td headers="d1147e42 ">Returns a list of all assets in the model. You can also list all available asset property
+types and saved searches, and update an asset.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/auth</code></td>
+
+<td headers="d1147e42 ">Log out and invalidate the current session.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/config</code></td>
+
+<td headers="d1147e42 ">View and manage tenants, domains, and <span class="ph">QRadar®</span> extensions.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/data_classification</code></td>
+
+<td headers="d1147e42 ">View all high and low-level categories, <span class="ph">QRadar</span> Identifier (QID) records,
+and event mappings. You can also create or edit QID records and mappings.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/forensics</code></td>
+
+<td headers="d1147e42 ">Manage capture recoveries and cases.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/gui_app_framework</code></td>
+
+<td headers="d1147e42 ">Install and manage applications that are created by using the GUI Application Framework
+Software Development Kit.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/help</code></td>
+
+<td headers="d1147e42 ">Returns a list of API capabilities.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/qrm</code></td>
+
+<td headers="d1147e42 ">Manage QRM saved search groups, question groups, simulation groups, topology saved search
+groups, and model groups.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/qvm</code></td>
+
+<td headers="d1147e42 ">Retrieves assets, vulnerabilities, networks, open services, networks, and filters. You can
+also create or update remediation tickets.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/reference_data</code></td>
+
+<td headers="d1147e42 ">View and manage reference data collections.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/scanner</code></td>
+
+<td headers="d1147e42 ">View, create, or start a remote scan that is related to a scan profile.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/services</code></td>
+
+<td headers="d1147e42 ">Perform tasks such as WHOIS lookups, port scan lookups, DNS lookups, and DIG lookups. You can
+also retrieve geolocation data for an IP or set of IP addresses.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/siem</code></td>
+
+<td headers="d1147e42 ">View, update, and close offenses. You can also add notes and manage offense closing
+reasons.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/staged_config</code></td>
+
+<td headers="d1147e42 ">Retrieve staged configuration for users, hosts, notifications, remote networks, and remote
+services. You can also initiate or see the state of a deploy action, and update and delete Yara
+rules.</td>
+
+</tr>
+
+<tr>
+<td headers="d1147e39 "><code class="ph codeph">/api/system</code></td>
+
+<td headers="d1147e42 ">Manage server hosts, network interfaces, and firewall rules.</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<ol class="steps"><li class="step stepexpand">
+<span class="cmd">To access the interactive API documentation interface, enter the following URL in your web
+browser: <kbd class="ph userinput">https://<var class="keyword varname">ConsoleIPaddress</var>/api_doc/</kbd>.</span>
+</li>
+<li class="step stepexpand">
+<span class="cmd">Select the API version that you want to use from the list.</span>
+</li>
+<li class="step stepexpand">
+<span class="cmd">Go to the endpoint that you want to access.</span>
+</li>
+<li class="step stepexpand">
+<span class="cmd">Read the endpoint documentation and complete the request parameters.</span>
+</li>
+<li class="step stepexpand">
+<span class="cmd">Click <span class="ph uicontrol">Try it out</span> to send the API request to your console and receive a
+properly formatted HTTPS response.</span> 
+<div class="itemgroup info">
+<div class="note"><span class="notetitle">Note:</span> When you click <span class="ph uicontrol">Try it out</span>, the action is performed on the <span class="ph">QRadar</span> system. Not all actions can
+be reversed, for example, you cannot reopen an offense after you close it.</div>
+
+</div>
+</li>
+<li class="step stepexpand">
+<span class="cmd">Review and gather the information that you need to integrate with <span class="ph">QRadar</span>.</span>
+</li>
+</ol>
+
+</div>
+<aside role="complementary" aria-labelledby="d1147e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>

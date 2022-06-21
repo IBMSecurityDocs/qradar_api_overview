@@ -1,0 +1,590 @@
+Unable to locate tools.jar. Expected to find it in /opt/ibm/ditatools/java8_64-8.0-6.7_w_xerces_hotfix/lib/tools.jar
+
+init:
+
+initialize.properties.for.all.ibm.transtypes:
+
+dita2ibmhtml5.init:
+
+init-properties:
+
+check-arg:
+    [mkdir] Created dir: /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+
+log-arg:
+     [echo] *****************************************************************
+     [echo] * basedir = /home/dcspana4/iddaixw2_prod/dcs/dita-ot
+     [echo] * dita.dir = /home/dcspana4/iddaixw2_prod/dcs/dita-ot
+     [echo] * transtype = ibmhtml5
+     [echo] * tempdir = /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+     [echo] * outputdir = /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/out/0
+     [echo] * clean.temp = true
+     [echo] * DITA-OT version = 3.3.4
+     [echo] * XML parser = Xerces
+     [echo] * XSLT processor = Saxon
+     [echo] * collator = ICU
+     [echo] *****************************************************************
+     [echo] #Ant properties
+     [echo] #Mon Feb 01 10:52:41 EST 2021
+     [echo] args.copycss=yes
+     [echo] args.grammar.cache=yes
+     [echo] args.input=/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/m_container_restful_api.ditamap
+     [echo] args.logdir=/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/out/0
+     [echo] args.rellink=all
+     [echo] args.xml.systemid.set=yes
+     [echo] args.xsl=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.xhtml/xsl/html5.xsl
+     [echo] dita.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot
+     [echo] dita.output.dir=/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+     [echo] dita.plugin.batik-1.7.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.apache.xmlgraphics.batik
+     [echo] dita.plugin.com.antennahouse.i18n_index.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.antennahouse.i18n_index.2.3
+     [echo] dita.plugin.com.antennahouse.pdf5.ml.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.antennahouse.pdf5.ml
+     [echo] dita.plugin.com.ibm.dita.specialization.javaapiref.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.javaapiref
+     [echo] dita.plugin.com.ibm.dita.specialization.troubleshooting.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.troubleshooting
+     [echo] dita.plugin.com.ibm.ditatools.base.doctypes.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.doctypes
+     [echo] dita.plugin.com.ibm.ditatools.base.imagemigration.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.imagemigration
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.common.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.ddita.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.ddita
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.epub.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.epub
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.extensions.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.extensions
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.html5.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.html5
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.kc.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.kc
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.pdf.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.pdf
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.pdf.licr.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.pdf.licr
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.text.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.text
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.troff.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.troff
+     [echo] dita.plugin.com.ibm.ditatools.base.transform.xhtml.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.xhtml
+     [echo] dita.plugin.com.ibm.ditatools.debug.topic.fo.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.debug.topic.fo
+     [echo] dita.plugin.com.ibm.ditatools.omnimark.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.omnimark
+     [echo] dita.plugin.com.ibm.ditatools.railroad-diagrams.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.railroad-diagrams
+     [echo] dita.plugin.com.ibm.ditatools.redbook.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.redbook
+     [echo] dita.plugin.com.ibm.ditatools.specialization.apiref.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.apiref
+     [echo] dita.plugin.com.ibm.ditatools.specialization.cshelp.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.cshelp
+     [echo] dita.plugin.com.ibm.ditatools.specialization.eua.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.eua
+     [echo] dita.plugin.com.ibm.ditatools.specialization.ibmlic.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.ibmlic
+     [echo] dita.plugin.com.ibm.ditatools.specialization.mediawallet.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.mediawallet
+     [echo] dita.plugin.com.ibm.ditatools.specialization.msgRef.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.msgRef
+     [echo] dita.plugin.com.ibm.ditatools.specialization.quickstart.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.quickstart
+     [echo] dita.plugin.com.ibm.ditatools.specialization.samples.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.samples
+     [echo] dita.plugin.com.ibm.ditatools.specialization.smalldoc.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.smalldoc
+     [echo] dita.plugin.com.ibm.ditatools.specialization.tutorial.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.specialization.tutorial
+     [echo] dita.plugin.com.ibm.ditatools.stylecontrol.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.stylecontrol
+     [echo] dita.plugin.com.ibm.ditatools.svg-diagrams.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.svg-diagrams
+     [echo] dita.plugin.com.ibm.ditatools.troff-table.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.troff-table
+     [echo] dita.plugin.com.moldflow.dita.plus-allhtml-svgobject.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.plus-allhtml-svgobject
+     [echo] dita.plugin.com.moldflow.dita.plus-allhtml-syntaxdiagram-svgobject.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.plus-allhtml-syntaxdiagram-svgobject
+     [echo] dita.plugin.com.moldflow.dita.plus-allhtml-syntaxdiagram.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.plus-allhtml-syntaxdiagram
+     [echo] dita.plugin.com.moldflow.dita.plus-html-topics-twopass.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.plus-html-topics-twopass
+     [echo] dita.plugin.com.moldflow.dita.svgobject.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.svgobject
+     [echo] dita.plugin.com.moldflow.dita.syntaxdiagram2svg.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.syntaxdiagram2svg
+     [echo] dita.plugin.com.oxygenxml.dita.metrics.report.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.oxygenxml.dita.metrics.report
+     [echo] dita.plugin.com.oxygenxml.dost.patches.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.oxygenxml.dost.patches
+     [echo] dita.plugin.com.oxygenxml.editlink.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.oxygenxml.editlink
+     [echo] dita.plugin.com.sophos.tocjs.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.sophos.tocjs
+     [echo] dita.plugin.net.sourceforge.dita4publishers.common.html.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.common.html
+     [echo] dita.plugin.net.sourceforge.dita4publishers.common.mapdriven.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.common.mapdriven
+     [echo] dita.plugin.net.sourceforge.dita4publishers.common.xslt.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.common.xslt
+     [echo] dita.plugin.net.sourceforge.dita4publishers.epub.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.epub
+     [echo] dita.plugin.net.sourceforge.dita4publishers.html2.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.html2
+     [echo] dita.plugin.net.sourceforge.dita4publishers.kindle.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/net.sourceforge.dita4publishers.kindle
+     [echo] dita.plugin.org.apache.antcontrib.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.apache.antcontrib
+     [echo] dita.plugin.org.dita.base.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base
+     [echo] dita.plugin.org.dita.eclipsehelp.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.eclipsehelp
+     [echo] dita.plugin.org.dita.html5.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.html5
+     [echo] dita.plugin.org.dita.htmlhelp.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.htmlhelp
+     [echo] dita.plugin.org.dita.javahelp.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.javahelp
+     [echo] dita.plugin.org.dita.normalize.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.normalize
+     [echo] dita.plugin.org.dita.pdf2.axf.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.pdf2.axf
+     [echo] dita.plugin.org.dita.pdf2.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.pdf2
+     [echo] dita.plugin.org.dita.pdf2.fop.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.pdf2.fop
+     [echo] dita.plugin.org.dita.pdf2.xep.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.pdf2.xep
+     [echo] dita.plugin.org.dita.specialization.dita11.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.specialization.dita11
+     [echo] dita.plugin.org.dita.specialization.eclipsemap.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.specialization.eclipsemap
+     [echo] dita.plugin.org.dita.troff.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.troff
+     [echo] dita.plugin.org.dita.xhtml.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.xhtml
+     [echo] dita.plugin.org.lwdita.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.lwdita
+     [echo] dita.plugin.org.oasis-open.dita.v1_2.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.oasis-open.dita.v1_2
+     [echo] dita.plugin.org.oasis-open.dita.v1_3.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.oasis-open.dita.v1_3
+     [echo] dita.plugin.org.oasis-open.xdita.v0_2_2.dir=/home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.oasis-open.xdita.v0_2_2
+     [echo] dita.temp.dir=/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+     [echo] ditaotbuilddate=January 19, 2021
+     [echo] *****************************************************************
+
+build-init:
+
+ibm.common.init:
+     [echo] DITA-OT version 3.3.4, extended for DCS January 19, 2021
+     [echo] [DCSA000I][INFO] Please ignore any message about missing tools.jar.
+     [echo] The message comes from Apache Ant, but DCS does not use tools.jar.
+     [xslt] Processing /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.xhtml/xsl/html5.xsl to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/xslvalidation.testout
+     [xslt] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/validate-xsl-override.xsl
+     [xslt] Processing /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.xhtml/xsl/html5.xsl to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/xslencodingvalidation.testout
+     [xslt] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/validate-encoding-xsl-override.xsl
+
+startbuild.console.message:
+     [echo] [DCSA002I][INFO] Beginning DITA-OT build of m_container_restful_api.ditamap to ibmhtml5.
+
+common.IBM.preprocess.PRE:
+
+timestamp.pre:
+
+generate.timestamp.debug:
+     [echo] Step preprocess: 1-February-2021 10:52:45.662 AM
+
+preprocess.init:
+     [echo] *****************************************************************
+     [echo] * input = /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/m_container_restful_api.ditamap
+     [echo] *****************************************************************
+
+ditaval-merge:
+
+timestamp.gen-list.pre:
+
+generate.timestamp.debug:
+     [echo] Step gen-list: 1-February-2021 10:52:46.171 AM
+
+gen-list:
+ [gen-list] Using Xerces grammar pool for DTD and schema caching.
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/m_container_restful_api.ditamap
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_getting_started.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_filtering.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_sortsyntax.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_paging.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_errors.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_cors.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_SampleCode.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/t_api_using_the_doc_user_interface.dita
+ [gen-list] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/variables_qradar_gen.dita
+ [gen-list] Serializing job specification
+
+timestamp.debug-filter.pre:
+
+generate.timestamp.debug:
+     [echo] Step debug-filter: 1-February-2021 10:52:51.781 AM
+
+generate-bom:
+     [xslt] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/transform_bom_single.pkglist
+     [xslt] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/generate-package-list.xsl
+
+debug-filter:
+   [filter] Using Xerces grammar pool for DTD and schema caching.
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_sortsyntax.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/t_api_using_the_doc_user_interface.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_errors.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/variables_qradar_gen.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/variables_qradar_gen.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_paging.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_cors.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/m_container_restful_api.ditamap to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_filtering.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_SampleCode.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+   [filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/FileNet/Work/Current/IDCMS1/SWG/QRadar/API/c_rest_api_getting_started.dita to file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/canditopics.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/conref.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/conreftargets.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/copytosource.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditamap.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditamapandtopic.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditatopic.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/hrefditatopic.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/hreftargets.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/html.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/image.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/outditafiles.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/resourceonly.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/resourceonly.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/subjectscheme.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/subtargets.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/user.input.file.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+
+ibm.common.set.properties:
+
+updateCiteReferenceLinks:
+
+timestamp.mapref.pre:
+
+generate.timestamp.debug:
+     [echo] Step mapref: 1-February-2021 10:52:54.880 AM
+
+mapref-check:
+
+mapref:
+   [mapref] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+branch-filter:
+[branch-filter] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+timestamp.copy-files.pre:
+
+generate.timestamp.debug:
+     [echo] Step copy-files: 1-February-2021 10:52:55.823 AM
+
+copy-image:
+     [copy] Copying 2 files to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+
+copy-html:
+
+copy-flag-check:
+
+copy-flag:
+
+copy-files:
+
+ibm-copy-flag:
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/flagimage.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+
+timestamp.keyref.pre:
+
+generate.timestamp.debug:
+     [echo] Step keyref: 1-February-2021 10:52:56.207 AM
+
+keyref:
+   [mapref] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+   [mapref] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/preprocess/mapref.xsl
+   [mapref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+copy-to:
+
+timestamp.conrefpush.pre:
+
+generate.timestamp.debug:
+     [echo] Step conrefpush: 1-February-2021 10:52:57.003 AM
+
+conrefpush:
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/conref.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+
+timestamp.conref.pre:
+
+generate.timestamp.debug:
+     [echo] Step conref: 1-February-2021 10:52:57.388 AM
+
+conref-check:
+
+conref:
+   [conref] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+   [conref] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/preprocess/conref.xsl
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/variables_qradar_gen.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+   [conref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+profile-check:
+
+profile:
+
+timestamp.coderef.pre:
+
+generate.timestamp.debug:
+     [echo] Step coderef: 1-February-2021 10:52:59.694 AM
+
+topic-fragment:
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/variables_qradar_gen.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[topic-fragment] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+timestamp.chunk.pre:
+
+generate.timestamp.debug:
+     [echo] Step chunk: 1-February-2021 10:53:00.144 AM
+
+chunk-check:
+
+chunk:
+    [chunk] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditatopic.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditamap.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/fullditamapandtopic.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/resourceonly.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+[job-helper] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/.job.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/copytosource.list
+[job-helper] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/job-helper.xsl
+
+split.ditabase.topicrefs.init:
+
+split.ditabase.topicrefs:
+[split-composite-topicrefs] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[split-composite-topicrefs] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/split-ditabase-topicref.xsl
+[split-composite-topicrefs] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+timestamp.move-meta-entries.pre:
+
+generate.timestamp.debug:
+     [echo] Step move-meta-entries: 1-February-2021 10:53:00.976 AM
+
+move-meta-entries:
+[move-meta] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+[move-meta] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+[move-meta] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/preprocess/mappull.xsl
+
+update-navtitle-for-ditavalref:
+[update-navtitle-ditavalref] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[update-navtitle-ditavalref] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/update-navtitle-for-ditavalref.xsl
+[update-navtitle-ditavalref] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+timestamp.maplink.pre:
+
+generate.timestamp.debug:
+     [echo] Step maplink: 1-February-2021 10:53:02.342 AM
+
+maplink-check:
+
+maplink:
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+  [maplink] Processing file:/home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+overrideTitleAndShortdesc:
+[overrideTitleAndShortdesc] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[overrideTitleAndShortdesc] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/xsl/mappush2.xsl
+[overrideTitleAndShortdesc] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+
+timestamp.topicpull.pre:
+
+generate.timestamp.debug:
+     [echo] Step topicpull: 1-February-2021 10:53:03.435 AM
+
+topicpull-check:
+
+topicpull:
+[topicpull] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[topicpull] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/org.dita.base/xsl/preprocess/topicpull.xsl
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[topicpull] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+ibm.preprocess.post.init:
+
+move-links-to-end:
+
+common-map-topic-preprocess.post:
+[ibmpostprocess] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[ibmpostprocess] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.common/preprocess.POST/ibm-preprocess-post.xsl
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[ibmpostprocess] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+update-ditaval-with-defaults:
+
+detect-content-language:
+[detect-lang] Lang search finished
+     [echo] Calculated NL identifier for any locale based processing: en
+
+adjust-nl-filename:
+
+adjust-nl-outdir:
+
+adjust-nl-output-name-or-location:
+
+common.IBM.preprocess.POST:
+
+svg-syntax-as-preprocess-step.init:
+
+plus-html-topics-twopass.check.class:
+
+plus-allhtml-svgobject.init:
+
+plus-allhtml-svgobject.before.stage1:
+
+plus-allhtml-syntaxdiagram.init:
+
+syntaxdiagram2svg.copy-files.init:
+
+plus-allhtml-syntaxdiagram-svgobject.init:
+
+plus-html-topics-twopass-IBM-CUSTOM.stage1.perform:
+[tidydiagrams] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[tidydiagrams] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.svg-diagrams/xsl/tidy-diagrams.xsl
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/variables_qradar_gen.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[tidydiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+[svgdiagrams] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+[svgdiagrams] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.svg-diagrams/xsl/stage1-ddita-shell.xsl
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[svgdiagrams] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+plus-allhtml-syntaxdiagram-svgobject.copy-files.js:
+
+plus-allhtml-svgobject.copy-files.js.to-temp.check:
+
+plus-allhtml-svgobject.copy-files.js.to-temp:
+     [copy] Copying 12 files to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/js/syntaxdiagram-svg
+
+plus-allhtml-svgobject.copy-files.js.to-output.check:
+
+plus-allhtml-svgobject.copy-files.js.to-output:
+
+plus-allhtml-svgobject.copy-files.js:
+
+plus-allhtml-svgobject.copy-files.js.to-temp.check:
+
+plus-allhtml-svgobject.gen-file.js.to-temp:
+     [xslt] Processing /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.syntaxdiagram2svg/resource/constants.xml to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/js/syntaxdiagram-svg/constants.js
+     [xslt] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.moldflow.dita.syntaxdiagram2svg/xsl/make-constants.xsl
+
+plus-allhtml-svgobject.copy-files.js.to-output.check:
+
+plus-allhtml-svgobject.gen-file.js.to-output:
+
+plus-allhtml-svgobject.gen-file.js:
+
+plus-allhtml-syntaxdiagram-svgobject.copy-files.css:
+
+plus-allhtml-syntaxdiagram-svgobject.copy-files:
+
+plus-allhtml-svgobject.make-static:
+     [xslt] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+
+plus-allhtml-svgobject.make-imagemaps:
+
+plus-allhtml-svgobject.convert-to-path:
+
+plus-allhtml-svgobject.test.exist.svgobject.directory:
+
+plus-allhtml-svgobject.count.svgobject:
+
+plus-allhtml-svgobject.copy-svgobject:
+
+plus-allhtml-svgobject.count.svg:
+
+plus-allhtml-svgobject.rasterize:
+
+plus-allhtml-svgobject.after.stage1:
+
+svg-syntax-as-preprocess-step.run:
+
+svg-syntax-as-preprocess-step:
+
+preprocess-skipclean:
+
+xhtml.init:
+
+output-css-warn-message:
+
+xhtml.image-metadata:
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita
+[image-metadata] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita
+
+dita.topics.ibmhtml5.common:
+ [pipeline] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+ [pipeline] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.xhtml/xsl/html5.xsl
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_sortsyntax.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_sortsyntax.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/t_api_using_the_doc_user_interface.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/t_api_using_the_doc_user_interface.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_errors.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_errors.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_paging.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_paging.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_cors.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_cors.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_filtering.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_filtering.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_SampleCode.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_SampleCode.html
+ [pipeline] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/c_rest_api_getting_started.dita to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/c_rest_api_getting_started.html
+
+dita.inner.topics.ibmhtml5.common:
+
+delete.syntax.svg.dir:
+
+ibmhtml5.topics:
+
+dita.kcmap.out:
+
+dita.kcmap.out.old.transform:
+     [xslt] Transforming into /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+     [xslt] Processing /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/m_container_restful_api.ditamap to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp/m_container_restful_api.ditamap
+     [xslt] Loading stylesheet /home/dcspana4/iddaixw2_prod/dcs/dita-ot/plugins/com.ibm.ditatools.base.transform.ddita/xsl/idynamicdita.xsl
+
+copy-css-ibmhtml5.init:
+
+copy-css-ibmhtml5.common:
+     [copy] Copying 2 files to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+
+copy-css-ibmhtml5.kc_welcome:
+     [copy] Copying 1 file to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+
+copy-css-ibmhtml5.apiref:
+
+copy-css-user:
+
+copy-css-ibmhtml5:
+
+copy-default-ibm-images:
+     [copy] Copying 6 files to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp/ibmhtml5_temp
+
+copy-optional-bom:
+     [copy] Copying 1 file to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/out/0
+     [move] Moving 1 file to /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/tmp
+
+zip.ibmhtml5:
+      [zip] Building zip: /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/out/0/doc.zip
+      [zip] Building zip: /home/dcspana4/iddaixw2_prod/jenkins/workspace/Transform@8/mapping/0/accessible-mapping.zip
+
+dita2ibmhtml5:
+
+endbuild.console.message:
+     [echo] [DCSA003I][INFO] Ending DITA-OT build of m_container_restful_api.ditamap to ibmhtml5.
+
+generate.timestamp.debug:
+     [echo] Step end-of-build: 1-February-2021 10:53:12.096 AM
+
+clean-temp:

@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="When an API request fails due to request errors or server errors, an error response message is returned in JSON format.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>API error messages</title>
+</head>
+<body id="concept_bhw_5tr_st"><main role="main"><article role="article" aria-labelledby="d295e10">
+<h1 class="topictitle1" id="d295e10">API error messages</h1>
+
+
+<div class="body conbody"><p class="shortdesc">When an API request fails due to request errors or server errors, an error response
+message is returned in JSON format.</p>
+
+<p>An error response message is returned in JSON format even for endpoints that support other MIME
+types. The error response message includes error message itself, a description of the error, a
+unique error code for the endpoint, an HTTP response message, and an HTTP response code.</p>
+
+<p>The error response includes following fields:</p>
+
+<ul>
+<li><span class="keyword parmname">message</span>:  the error message</li>
+
+<li><span class="keyword parmname">details</span>: a field for additional information, which may or may not be
+populated</li>
+
+<li><span class="keyword parmname">description</span>: description of the specific error </li>
+
+<li><span class="keyword parmname">code</span>: Unique error response code</li>
+
+<li><span class="keyword parmname">http_response</span>:<ul>
+<li><span class="keyword parmname">message</span>: HTTP response message</li>
+
+<li><span class="keyword parmname">code</span>: HTTP response status code</li>
+</ul>
+</li>
+</ul>
+
+<p>For example, the following API request attempts to get information about a non-existent reference
+set that is called "test-set":</p>
+
+<pre class="codeblock"><code><kbd class="ph userinput">https://&lt;host_ip&gt;/api/reference_data/sets/test_set</kbd></code></pre>
+<p>An HTTP <samp class="ph systemoutput">404</samp> response code and the following JSON error response
+message are returned:</p>
+
+<pre class="codeblock"><code>{
+  "message": "test_set does not exist",
+  "details": {},
+  "description": "The reference set does not exist.",
+  "code": 1002,
+  "http_response": {
+     "message": "We could not find the resource you requested.",
+      "code": 404
+   }
+}</code></pre>
+<p>The following table provides more information about the HTTP response error categories returned
+by the <span class="ph">IBM®
+QRadar®</span> REST API:</p>
+
+
+<div class="tablenoborder"><table summary="" id="concept_bhw_5tr_st__table_mgg_4nm_vt" class="defaultstyle"><colgroup><col style="width:33.33333333333333%"><col style="width:16.666666666666664%"><col style="width:50%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d295e100">HTTP error category</th>
+
+<th id="d295e103">HTTP response Code</th>
+
+<th id="d295e106">HTTP response message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d295e100 ">MULTIPLE CHOICES</td>
+
+<td headers="d295e103 ">300</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource corresponds to any one of a set of representations, each
+with its own specific location.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">MOVED PERMANENTLY</td>
+
+<td headers="d295e103 ">301</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The resource has moved permanently. Please refer to the
+documentation.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">FOUND</td>
+
+<td headers="d295e103 ">302</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The resource has moved temporarily. Please refer to the
+documentation.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">SEE OTHER</td>
+
+<td headers="d295e103 ">303</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The resource can be found under a different URI.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">NOT MODIFIED</td>
+
+<td headers="d295e103 ">304</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The resource is available and not modified.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">USE PROXY</td>
+
+<td headers="d295e103 ">305</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource must be accessed through the proxy given by the Location
+field.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">TEMPORARY REDIRECT</td>
+
+<td headers="d295e103 ">307</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The resource resides temporarily under a different URI.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">BAD REQUEST</td>
+
+<td headers="d295e103 ">400</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Invalid syntax for this request was provided.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">UNAUTHORIZED</td>
+
+<td headers="d295e103 ">401</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">You are unauthorized to access the requested resource. Please log
+in.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">FORBIDDEN</td>
+
+<td headers="d295e103 ">403</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Your account is not authorized to access the requested
+resource.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">NOT FOUND</td>
+
+<td headers="d295e103 ">404</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">We could not find the resource you requested. Please refer to the documentation
+for the list of resources.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">METHOD NOT ALLOWED</td>
+
+<td headers="d295e103 ">405</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">This method type is not currently supported.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">NOT ACCEPTABLE</td>
+
+<td headers="d295e103 ">406</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Acceptance header is invalid for this endpoint resource.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">PROXY AUTHENTICATION REQUIRED</td>
+
+<td headers="d295e103 ">407</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Authentication with proxy is required.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">REQUEST TIMEOUT</td>
+
+<td headers="d295e103 ">408</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Client did not produce a request within the time that the server was prepared
+to wait.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">CONFLICT</td>
+
+<td headers="d295e103 ">409</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The request could not be completed due to a conflict with the current state of
+the resource.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">GONE</td>
+
+<td headers="d295e103 ">410</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource is no longer available and has been permanently
+removed.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">LENGTH REQUIRED</td>
+
+<td headers="d295e103 ">411</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Length of the content is required, please include it with the
+request.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">PRECONDITION FAILED</td>
+
+<td headers="d295e103 ">412</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The request did not match the pre-conditions of the requested
+resource.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">REQUEST ENTITY TOO LARGE</td>
+
+<td headers="d295e103 ">413</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The request entity is larger than the server is willing or able to
+process.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">REQUEST-URI TOO LONG</td>
+
+<td headers="d295e103 ">414</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The request URI is longer than the server is willing to
+interpret.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">UNSUPPORTED MEDIA TYPE</td>
+
+<td headers="d295e103 ">415</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource does not support the media type
+provided.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">REQUESTED RANGE NOT SATISFIABLE</td>
+
+<td headers="d295e103 ">416</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested range for the resource is not available.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">EXPECTATION FAILED</td>
+
+<td headers="d295e103 ">417</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Unable to meet the expectation given in the Expect request
+header.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">MISSING ARGUMENTS</td>
+
+<td headers="d295e103 ">419</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource is missing required arguments.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">INVALID ARGUMENTS</td>
+
+<td headers="d295e103 ">420</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource does not support one or more of the given
+parameters.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">UNPROCESSABLE ENTITY</td>
+
+<td headers="d295e103 ">422</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The request was well-formed but was unable to be followed due to semantic
+errors.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">INTERNAL SERVER ERROR</td>
+
+<td headers="d295e103 ">500</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Unexpected internal server error.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">NOT IMPLEMENTED</td>
+
+<td headers="d295e103 ">501</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The requested resource is recognized but not
+implemented.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">BAD GATEWAY</td>
+
+<td headers="d295e103 ">502</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Invalid response received when acting as a proxy or
+gateway.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">SERVICE UNAVAILABLE</td>
+
+<td headers="d295e103 ">503</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The server is currently unavailable.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">GATEWAY TIMEOUT</td>
+
+<td headers="d295e103 ">504</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">Did not receive a timely response from upstream server while acting as a
+gateway or proxy.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">HTTP VERSION NOT SUPPORTED</td>
+
+<td headers="d295e103 ">505</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">The HTTP protocol version used in the request message is not
+supported.</samp></td>
+</tr>
+
+<tr>
+<td headers="d295e100 ">INITIALIZATION FAILURE</td>
+
+<td headers="d295e103 ">550</td>
+
+<td headers="d295e106 "><samp class="ph systemoutput">A failure occurred during initialization of services. API will be
+unavailable.</samp></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<aside role="complementary" aria-labelledby="d295e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>

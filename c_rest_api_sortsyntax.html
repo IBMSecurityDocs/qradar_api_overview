@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="To order the results that are returned in an API retrieval request, HTTP GET, some IBM QRadar API endpoints that return lists of resources support the sort parameter.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>Sort syntax</title>
+</head>
+<body id="c_rest_api_sortsyntax"><main role="main"><article role="article" aria-labelledby="d55e10">
+<h1 class="topictitle1" id="d55e10">Sort syntax</h1>
+
+
+<div class="body conbody"><p class="shortdesc">To order the results that are returned in an API retrieval request, HTTP GET,
+some <span class="ph">IBM®
+QRadar®</span> API endpoints
+that return lists of resources support the <span class="keyword parmname">sort</span> parameter. </p>
+
+<p>The <span class="keyword parmname">sort</span> parameter syntax is consistent for all endpoints that
+support it. Refer to the documentation for the endpoint to determine if the sort parameter applies
+to it. Any limitations on the sort syntax are included in that endpoint's description. To ensure
+that spaces or special characters are encoded properly, remember that query parameters must be
+double URL encoded before they are sent.</p>
+
+<section class="section" role="region" aria-labelledby="d55e35"><h2 class="sectiontitle" id="d55e35">Sort operators</h2>
+
+<div class="tablenoborder"><table summary="" id="c_rest_api_sortsyntax__table_lpz_pdw_ns" class="defaultstyle"><colgroup><col style="width:18.181818181818183%"><col style="width:27.27272727272727%"><col style="width:54.54545454545454%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d55e49">Operator</th>
+
+<th id="d55e52">Description</th>
+
+<th id="d55e55">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td headers="d55e49 "><code class="ph codeph">+</code></td>
+
+<td headers="d55e52 ">Sort field is in ascending order.</td>
+
+<td headers="d55e55 ">Sort <var class="keyword varname">add_time</var> field in ascending
+order:<p><code class="ph codeph">/api/config/extension_management/extensions?sort=%2Badd_time</code></p>
+</td>
+</tr>
+
+<tr>
+<td headers="d55e49 "><code class="ph codeph">-</code></td>
+
+<td headers="d55e52 ">Sort field is in descending order.</td>
+
+<td headers="d55e55 ">Sort <var class="keyword varname">version</var> field in descending
+order:<p><code class="ph codeph">/api/config/extension_management/extensions?sort=-version</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" role="region" aria-labelledby="d55e97"><h2 class="sectiontitle" id="d55e97">Sorting multiple fields</h2>
+<p>You can sort multiple fields by separating them with a comma. In the following example, the
+<code class="ph codeph">version</code> field is sorted in descending order. Then, within each
+<code class="ph codeph">version</code> group, the <code class="ph codeph">add_time</code> field is sorted in ascending order. </p>
+
+<pre class="codeblock"><code>/api/config/extension_management/extensions?sort=-version%2C%2Badd_time</code></pre></section>
+
+<section class="section" role="region" aria-labelledby="d55e116"><h2 class="sectiontitle" id="d55e116">Escaping characters in sort strings</h2>
+<p>Escape any character in the sort string by preceding it with a backslash (\). If any of the
+following characters are inside a field identifier, you must escape them:</p>
+
+<ul>
+<li>,</li>
+
+<li>(</li>
+
+<li>)</li>
+
+<li>\</li>
+</ul>
+</section>
+</div>
+<aside role="complementary" aria-labelledby="d55e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<title>RESTful API overview</title>
+</head>
+<body id="c_rest_api_getting_started.dita"><main role="main"><article role="article" aria-labelledby="d3140e10">
+<h1 class="topictitle1" id="d3140e10">RESTful API overview</h1>
+
+
+<div class="body conbody"><p class="shortdesc">You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the
+<span class="ph">QRadar® SIEM
+Console</span>. To send these
+requests, use the HTTP implementation that is built in to the programming language of your choice.
+Each request contains authentication information, and parameters that modify the
+request.</p>
+
+<section class="section" role="region" aria-labelledby="d3140e25"><h2 class="sectiontitle" id="d3140e25"><span class="ph">QRadar</span> and API
+versions</h2>
+
+<div class="p"><div class="note"><span class="notetitle">Note:</span> The <span class="ph">QRadar</span> API
+endpoint documentation for API versions 12.0 and later is <a href="https://ibmsecuritydocs.github.io/qradar_api_overview/c_rest_api_getting_started.html" rel="noopener" target="_blank" title="(Opens in a new tab or window)">now
+hosted on GitHub</a>. Click a specific version number in the table below to access the endpoint
+documentation for each API version.</div>
+Every <span class="ph">QRadar</span> version has a REST API
+version, as described in the following table:</div>
+
+
+<div class="tablenoborder"><table summary="" id="c_rest_api_getting_started.dita__table_mtr_007_z2b" class="defaultstyle"><caption><span class="tablecap">Table 1. <span class="ph">QRadar</span> and API
+versions</span></caption><colgroup><col style="width:26.829268292682933%"><col style="width:24.39024390243903%"><col style="width:24.39024390243903%"><col style="width:24.39024390243903%"></colgroup><thead style="text-align:left;">
+<tr>
+<th id="d3140e68"><span class="ph">QRadar</span> version</th>
+
+<th id="d3140e74">Introduced REST API version</th>
+
+<th id="d3140e77"><strong>Supported REST API versions</strong></th>
+
+<th id="d3140e81">Deprecated REST API versions</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d3140e68 "><span class="ph">7.5.0</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_17.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">17.0</a></td>
+
+<td headers="d3140e77 ">17.0<p>16.0</p>
+<p>15.0</p>
+</td>
+
+<td headers="d3140e81 ">14.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">7.4.3</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_16.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">16.0</a></td>
+
+<td headers="d3140e77 ">16.0<p>15.0</p>
+<p>14.0</p>
+</td>
+
+<td headers="d3140e81 ">
+<p>13.x</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">7.4.2</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_15.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">15.0</a></td>
+
+<td headers="d3140e77 ">15.0<p>14.0</p>
+<p>13.1</p>
+<p>13.0</p>
+</td>
+
+<td headers="d3140e81 ">12.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">7.4.1</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_14.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">14.0</a></td>
+
+<td headers="d3140e77 ">
+<p>14.0</p>
+
+<p>13.1</p>
+
+<p>13.0</p>
+
+<p>12.1</p>
+
+<p>12.0</p>
+
+</td>
+
+<td headers="d3140e81 ">11.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">7.4.0</span> Fix Pack 1</td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_13.1/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">13.1</a></td>
+
+<td headers="d3140e77 ">
+<p>13.1</p>
+
+<p>13.0</p>
+
+<p>12.1</p>
+
+<p>12.0</p>
+
+</td>
+
+<td headers="d3140e81 ">10.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">7.4.0</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_13.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">13.0</a></td>
+
+<td headers="d3140e77 ">
+<p>13.0</p>
+
+<p>12.1</p>
+
+<p>12.0</p>
+
+</td>
+
+<td headers="d3140e81 ">10.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">V7.3.3</span> Fix Pack 3</td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_12.1/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">12.1</a></td>
+
+<td headers="d3140e77 ">
+<p>12.1</p>
+
+<p>12.0</p>
+
+<p>11.0</p>
+
+</td>
+
+<td headers="d3140e81 ">10.x</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">V7.3.3</span></td>
+
+<td headers="d3140e74 "><a href="https://ibmsecuritydocs.github.io/qradar_api_12.0/" rel="noopener" target="_blank" title="(Opens in a new tab or window)">12.0</a></td>
+
+<td headers="d3140e77 ">
+<p>12.0</p>
+
+<p>11.0</p>
+
+</td>
+
+<td headers="d3140e81 ">
+<p>10.1</p>
+
+<p>10.0</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">V7.3.2</span> Patch 3</td>
+
+<td headers="d3140e74 "><a href="https://www.ibm.com/docs/en/SS42VS_7.3.3/com.ibm.qradar.doc/c_rest_api_version110_categories_intro.html" rel="noopener" target="_blank" title="(Opens in a new tab or window)">11.0</a></td>
+
+<td headers="d3140e77 ">
+<p>11.0</p>
+
+<p>10.1</p>
+
+<p>10.0</p>
+
+</td>
+
+<td headers="d3140e81 ">
+<p>9.2</p>
+
+<p>9.1</p>
+
+<p>9.0</p>
+
+</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">V7.3.2</span> Patch 1</td>
+
+<td headers="d3140e74 "><a href="https://www.ibm.com/docs/en/SS42VS_7.3.3/com.ibm.qradar.doc/c_rest_api_version101_categories_intro.html" rel="noopener" target="_blank" title="(Opens in a new tab or window)">10.1</a></td>
+
+<td headers="d3140e77 ">
+<p>10.1</p>
+
+<p>10.0</p>
+
+<p>9.2</p>
+
+<p>9.1</p>
+
+<p>9.0</p>
+
+</td>
+
+<td headers="d3140e81 ">&nbsp;</td>
+
+</tr>
+
+<tr>
+<td headers="d3140e68 "><span class="ph">V7.3.2</span></td>
+
+<td headers="d3140e74 "><a href="https://www.ibm.com/docs/en/SS42VS_7.3.3/com.ibm.qradar.doc/c_rest_api_version100_categories_intro.html" rel="noopener" target="_blank" title="(Opens in a new tab or window)">10.0</a></td>
+
+<td headers="d3140e77 ">
+<p>10.0</p>
+
+<p>9.2</p>
+
+<p>9.1</p>
+
+<p>9.0</p>
+
+</td>
+
+<td headers="d3140e81 ">
+<p>8.1</p>
+
+<p>8.0</p>
+
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section class="section" role="region" aria-labelledby="d3140e421"><h2 class="sectiontitle" id="d3140e421">API endpoints</h2>         
+         <p>An API <dfn class="term">endpoint</dfn> contains the URL of the resource that you want to access
+            and the action that you want to complete on that resource. The action is indicated by
+            the HTTP method of the request: GET, POST, PUT, or DELETE.</p>
+
+      </section>
+
+<section class="section" role="region" aria-labelledby="d3140e433"><h2 class="sectiontitle" id="d3140e433">Required permissions to access the API</h2>         
+         <div class="p">Authentication information must be included in every API request as an HTTP header.
+            Provide the required access credentials in one of the following ways:<ul>
+<li>A user name and password for a <span class="ph">QRadar</span> user that is specified in
+the authorization header.<p>You specify the user name and password by using HTTP basic
+authentication. Although you can make API requests by providing a user name and password for every
+request, use authorized service tokens for all API integrations with QRadar. Only the user name and
+password option is supported for viewing the Documentation Page.</p>
+<p>For more information about
+creating user roles, security profiles, and users, see the <cite>IBM QRadar Administration Guide</cite>.</p>
+</li>
+
+<li>An authorized services token that is specified in the SEC header.<p>To authenticate as an
+authorized service, you create an authentication token that uses authorized services. <span class="ph">QRadar</span> authorized services have
+roles and security profiles assigned that control access to the various API resources.</p>
+<p>The token is valid until the expiry date that you specified when you created the
+authorized service.</p>
+<p>For more information about creating user roles, security profiles and
+authorized services, see the <cite>IBM QRadar Administration Guide</cite>.</p>
+</li>
+</ul>
+
+         </div>
+
+      </section>
+
+<section class="section" role="region" aria-labelledby="d3140e484"><h2 class="sectiontitle" id="d3140e484">API requests and responses</h2>         
+         <p>When you send an API request, the server returns an HTTP response. The HTTP response
+            contains a status code to indicate whether the request succeeded and the details of the
+            response in the response body. Most resources format this response as JavaScript Object
+            Notation (JSON). You can use the JSON packages or libraries that are built in to the
+            programming language that you use to extract the data.</p>
+
+         <p>For a complete example of this process, see the sample code in <a href="https://github.com/ibm-security-intelligence/api-samples" rel="noopener" target="_blank" title="(Opens in a new tab or window)">GitHub</a>
+            (https://github.com/ibm-security-intelligence/api-samples).</p>
+
+      </section>
+
+<section class="section" role="region" aria-labelledby="d3140e500"><h2 class="sectiontitle" id="d3140e500">Version headers</h2>         
+         <p>You use version headers to request a specific version of the API. If you don't provide a
+version header, the latest version of the API is used, which might break integrations when <span class="ph">QRadar</span> is upgraded. If you provide
+a version header every time you use an API, it makes it easier to upgrade to newer versions of
+QRadar without breaking your API clients.</p>
+
+         <p>The APIs use the major and minor components of semantic versioning. Natural numbers are
+            used to designate major versions of the API, for example, '3'. Minor versions of the API
+            are designated with a major and minor component, for example, '3.1'. You can set the
+            version header to a major or a minor version of the API. Changes that are compatible
+            with existing versions are introduced with an incremented minor version number. Any
+            incompatible changes are introduced with a major version number increment. </p>
+
+         <p>When a major version of the API is specified in the version header without a minor
+            component, the server responds with the latest minor version within the major API
+            version. For example, if the client requests version '3', the server responds with
+            version '3.1'. If you want to use version 3.0, you must request '3.0' in the version
+            header. If you request a version greater than the latest version of an endpoint, the
+            latest available version of that endpoint is returned. Each endpoint is listed under
+            every version it is valid for, even if it's unchanged in the newer versions.</p>
+
+      </section>
+
+<section class="section" role="region" aria-labelledby="d3140e520" id="c_rest_api_getting_started.dita__section_opl_33v_rr"><h2 class="sectiontitle" id="d3140e520">Endpoint deprecation</h2>         
+         <p>An API endpoint is marked as <dfn class="term">deprecated</dfn> to indicate that it is not
+            recommended for use and will be removed in a future release. To give integrations time
+            to use an alternative, a deprecated endpoint continues to function for at least 1
+            release before it is removed. The interactive API documentation page indicates that an
+            endpoint is marked as deprecated. Also, the API response message for a deprecated
+            endpoint includes the header <samp class="ph systemoutput">Deprecated</samp>. An individual API
+            endpoint, or an entire version of API endpoints can be marked as deprecated. The
+            deprecated endpoints still continue to function until they are removed.</p>
+
+         <p>When an API endpoint completes the deprecation process, it is removed. Endpoints that
+            are removed no longer respond successfully. An attempt to call a removed endpoint
+            returns an error. An <samp class="ph systemoutput">HTTP 410 Gone</samp> response is returned for
+            individual removed endpoints. An <samp class="ph systemoutput">HTTP 422 Unprocessable
+               Entity</samp> response is returned for requests for a version that is no
+            longer supported.</p>
+
+         <p>Include the version header in API requests to call a specific version of an API
+            endpoint. API integrations that do not explicitly request a particular version are not
+            supported. If you do not specify a version, your request is directed to the latest
+            available version. If a release includes a new, incompatible version of an endpoint,
+            your integration might break. Have your request version in one location in your code to
+            ease upgrading as newer versions become available.</p>
+
+      </section>
+</div>
+
+<aside role="complementary" aria-labelledby="d3140e10"><nav role="navigation">
+<ul class="ullinks">
+<li class="ulchildlink"><strong><a href="c_rest_api_filtering.html">Filter syntax</a></strong><br>
+ To limit the results that are returned in an API retrieval request (HTTP GET), most <span class="ph">IBM® QRadar</span> API endpoints that return lists of resources support the <span class="keyword parmname">filter</span> parameter. </li>
+<li class="ulchildlink"><strong><a href="c_rest_api_sortsyntax.html">Sort syntax</a></strong><br>
+To order the results that are returned in an API retrieval request, HTTP GET, some <span class="ph">IBM QRadar</span> API endpoints that return lists of resources support the <span class="keyword parmname">sort</span> parameter. </li>
+<li class="ulchildlink"><strong><a href="c_rest_api_paging.html">Paging syntax</a></strong><br>
+To limit the results returned in an API retrieval request, HTTP GET, most <span class="ph">IBM QRadar</span> API endpoints that return lists of resources support the <span class="keyword parmname">Range</span> header parameter. </li>
+<li class="ulchildlink"><strong><a href="c_rest_api_errors.html">API error messages</a></strong><br>
+When an API request fails due to request errors or server errors, an error response message is returned in JSON format.</li>
+<li class="ulchildlink"><strong><a href="c_rest_api_cors.html">Cross-origin resource sharing</a></strong><br>
+Cross-origin resource sharing (CORS) occurs when a script on one server sends an Ajax request to another server. Cross-origin resource sharing also occurs when a request is sent on a different protocol or port to the same server.</li>
+<li class="ulchildlink"><strong><a href="c_rest_api_SampleCode.html">API sample code</a></strong><br>
+<span class="ph">IBM QRadar</span> API samples are stored in a GitHub repository for each version of <span class="ph">QRadar</span>. As new versions of <span class="ph">QRadar</span> are released, a new link is posted with code samples to help customers use APIs and features.</li>
+<li class="ulchildlink"><strong><a href="t_api_using_the_doc_user_interface.html">Accessing the interactive API documentation page</a></strong><br>
+Use the interactive API documentation page to access technical details for the RESTful APIs and experiment with making API requests to your server. </li>
+</ul>
+
+<div class="linklist relinfo" lang="en-us"><h2 class="linkheading">Related information</h2>
+<ul><li><img src="sout.gif" alt=""><a href="https://www.securitylearningacademy.com/enrol/index.php?id=4103" rel="noopener" target="_blank" title="(Opens in a new tab or window)">How do I work with reference data through the API? (Security Learning
+Academy course)</a></li>
+</ul></div>
+</nav></aside></article></main></body></html>

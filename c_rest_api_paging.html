@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="To limit the results returned in an API retrieval request, HTTP GET, most IBM QRadar API endpoints that return lists of resources support the Range header parameter.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>Paging syntax</title>
+</head>
+<body id="c_rest_api_paging"><main role="main"><article role="article" aria-labelledby="d1597e10">
+<h1 class="topictitle1" id="d1597e10">Paging syntax</h1>
+
+
+<div class="body conbody"><p class="shortdesc">To limit the results returned in an API retrieval request, HTTP GET, most <span class="ph">IBM®
+QRadar®</span> API endpoints that return
+lists of resources support the <span class="keyword parmname">Range</span> header parameter. </p>
+
+<p>The <span class="keyword parmname">Range</span> parameter syntax is consistent for all endpoints that support it.
+Refer to the documentation for the endpoint to determine whether the <span class="keyword parmname">Range</span>
+parameter applies to it. Any limitations on the <span class="keyword parmname">Range</span> syntax are included in
+that endpoint's description.</p>
+
+<div class="note"><span class="notetitle">Note:</span> The <span class="keyword parmname">Range</span> parameter is always sent as a header parameter, unlike the
+<span class="keyword parmname">sort</span>, <span class="keyword parmname">filter</span>, and <span class="keyword parmname">fields</span> parameters.
+These parameters are typically query parameters.</div>
+
+<p>By default, only the first 50 records are returned for the <span class="keyword parmname">Range</span> parameter
+on the interactive API documentation page. You can alter the <span class="keyword parmname">Range</span> value for an
+endpoint. However, if you request large result sets, it might negatively affect the performance of
+the interactive API documentation page.</p>
+
+<section class="section" role="region" aria-labelledby="d1597e65"><h2 class="sectiontitle" id="d1597e65">Range header parameter</h2><p>Paging requests are specified with the
+<span class="keyword parmname">Range</span> header parameter. Use the following zero-indexed
+syntax:</p>
+<pre class="codeblock"><code>Range: items=x-y</code></pre><p>The response to a request that employs paging
+includes the Content-Range header. The header indicates the number of records that were returned
+within the content range in the following
+format:</p>
+<pre class="codeblock"><code>Content-Range: items x-y/total number of records received</code></pre><p>For
+example, to return the first 5 records, the request header contains the following
+parameter:</p>
+<pre class="codeblock"><code>"Range: items= 0-4" </code></pre>The response header for that request
+returns the following information:<pre class="codeblock"><code>Content-Range: items 0-4/5</code></pre><p>If the
+requested range exceeds the number of records, all records that are within the stated range are
+returned. In the following example, the first 100 records are
+requested:</p>
+<pre class="codeblock"><code>"Range: items= 0-99"</code></pre><p>However, there are only 12 records in
+total. The response returns all records within the stated
+range:</p>
+<pre class="codeblock"><code>Content-Range: items 0-11/12</code></pre><p>If the range requested is beyond the
+bounds of the amount of records, then no records are returned. In the following example, the first
+records 3 to 5 records are requested:</p>
+<pre class="codeblock"><code>"Range: items = 3-5"</code></pre><p>However,
+there are fewer than 3 records, and so no records are
+returned:</p>
+<pre class="codeblock"><code>Content-Range: items */3</code></pre></section>
+</div>
+<aside role="complementary" aria-labelledby="d1597e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>

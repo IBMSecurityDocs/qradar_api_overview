@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="Cross-origin resource sharing (CORS) occurs when a script on one server sends an Ajax request to another server. Cross-origin resource sharing also occurs when a request is sent on a different protocol or port to the same server.">
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_getting_started.html">
+<title>Cross-origin resource sharing</title>
+</head>
+<body id="concept_uj4_q4k_qr"><main role="main"><article role="article" aria-labelledby="d1775e10">
+<h1 class="topictitle1" id="d1775e10">Cross-origin resource sharing</h1>
+
+
+<div class="body conbody"><p class="shortdesc">Cross-origin resource sharing (CORS) occurs when a script on one server sends
+an Ajax request to another server. Cross-origin resource sharing also occurs when a request is sent
+on a different protocol or port to the same server.</p>
+
+<p>Cross-origin resource sharing violates the 'same origin policy', which is in place to
+prevent cross-site request forgery attacks. While the global prevention of cookies for
+<span class="keyword apiname">/api/*</span> endpoints avoids these attacks, browsers still attempt to enforce this
+policy. All browsers use this convention but it does not apply to manual request mechanisms like
+cURL.</p>
+
+<p>Browsers detect that you are attempting to make a request to a server, and initially
+send a preflight request. Preflight requests are set as an OPTION request against the same URL, but
+also contain the Origin header. The server must send back other information such as allowed request
+types, whether to expect headers in the actual request's response, and whether the origin is
+accepted.</p>
+
+<p>If the 'Access-Control-Allow-Origin' header of the response of the preflight request
+does not match the Origin header of the request, the browser rejects it. If the
+'Access-Control-Allow-Origin' header matches, the browser proceeds with the request. The request's
+response must pass the same origin check, in case the rule changes between the preflight and actual
+request.</p>
+
+<section class="section" role="region" aria-labelledby="d1775e31"><h2 class="sectiontitle" id="d1775e31">Management of allowed origins</h2>
+<p>The origin value that is sent by your browser contains the protocol followed by the host name and
+port, for example:</p>
+
+<pre class="codeblock"><code>http://192.0.2.0:8888</code></pre>
+<p>You can intercept requests sent by your browser to ensure that you have the correct origin value.
+You can add your origin to a whitelist on the <span class="ph">QRadar®
+Console</span> in the
+<span class="ph filepath">/opt/qradar/webapps/console/restapi/allowed_origins.list</span> file. Changes are
+detected and take effect immediately. This file contains a newline separated list of allowed
+origins. Each entry is tested against the origin header that is sent by browsers during pre-flight
+requests. If an entry matches the origin (or any entry is '*'), the browser is allowed to make
+cross-origin resource sharing requests.</p>
+
+<p>A common browser convention is to send <span class="keyword parmname">null</span> as the origin when the script is
+started from <code class="ph codeph">file://</code> by adding '*' to the whitelist. This practice allows all
+origins and is not a good practice.</p>
+</section>
+</div>
+<aside role="complementary" aria-labelledby="d1775e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_getting_started.html" title="You access the RESTful API by sending HTTPS requests to specific URLs (endpoints) on the QRadar SIEM Console. To send these requests, use the HTTP implementation that is built in to the programming language of your choice. Each request contains authentication information, and parameters that modify the request.">RESTful API overview</a></div>
+</div>
+</nav></aside></article></main></body></html>
