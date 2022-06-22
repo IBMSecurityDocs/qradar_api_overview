@@ -1,6 +1,6 @@
 # RESTful API
 
-*   [RESTful API overview](c_rest_api_getting_started.html)
+*   [QRadar API endpoint documentation and supported versions](c_rest_api_getting_started.html)
     *   [Filter syntax](c_rest_api_filtering.html)
     *   [Sort syntax](c_rest_api_sortsyntax.html)
     *   [Paging syntax](c_rest_api_paging.html)
