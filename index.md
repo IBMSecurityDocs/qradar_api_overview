@@ -8,6 +8,7 @@
     *   [Cross-origin resource sharing](c_rest_api_cors.html)
     *   [API sample code](c_rest_api_SampleCode.html)
     *   [Accessing the interactive API documentation page](t_api_using_the_doc_user_interface.html)
+*   [API 20.0](https://ibmsecuritydocs.github.io/qradar_api_20.0/)
 *   [API 19.0](https://ibmsecuritydocs.github.io/qradar_api_19.0/)
 *   [API 18.0](https://ibmsecuritydocs.github.io/qradar_api_18.0/)
 *   [API 17.0](https://ibmsecuritydocs.github.io/qradar_api_17.0/)
